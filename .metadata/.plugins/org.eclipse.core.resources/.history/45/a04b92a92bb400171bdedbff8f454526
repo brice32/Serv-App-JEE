@@ -1,0 +1,71 @@
+package contacts.emb.dao.jpa;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import contacts.emb.dao.IDaoPersonne;
+import contacts.emb.data.Categorie;
+import contacts.emb.data.Personne;
+import contacts.emb.data.Telephone;
+
+
+public class DaoPersonne implements IDaoPersonne {
+	
+	// Champs
+	
+	private EntityManager em;
+	
+	// Injecteurs
+	
+	public void setEntityManager( EntityManager  em ) {
+		this.em = em;
+	}
+	
+	// Actions
+	
+	@Override
+	public int inserer(Personne personne) {
+		em.persist(personne);
+		em.flush();
+		return personne.getId();
+	}
+
+	@Override
+	public void modifier(Personne personne) {
+		em.merge(personne);
+	}
+
+	@Override
+	public void supprimer(int idPersonne) {
+		Personne personne = retrouver(idPersonne);
+		em.remove(personne);
+	}
+
+	@Override
+	public Personne retrouver(int idPersonne) {
+		return em.find(Personne.class, idPersonne);
+	}
+
+	@Override
+	public List<Personne> listerTout() {
+		String jpql = "SELECT p FROM Personne p ORDER BY p.nom, p.prenom" ;
+		TypedQuery<Personne> query = em.createQuery( jpql, Personne.class );
+		return query.getResultList();
+	}
+
+
+	@Override
+	public int compterourCategorie(int idCategorie) {
+		String jpql = "SELECT COUNT(p) FROM Personne p WHERE p.categorie.id = :idCategorie";
+		TypedQuery<Long> query = em.createQuery( jpql, Long.class);
+		query.setParameter("idCategorie", idCategorie);
+		return query.getSingleResult().intValue();
+	}
+	
+}

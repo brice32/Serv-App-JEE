@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kb-project>
+ <depends-on-projects>
+  <project name="contacts-commun"/>
+  <project name="contacts-emb"/>
+ </depends-on-projects>
+ <used-by-projects/>
+ <paths>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/jsp-api.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/websocket-api.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/el-api.jar"/>
+  <path value="C:/dev/java/libraries/mapstruct-1.1/mapstruct-jdk8-1.1.0.Final.jar"/>
+  <path value="C:/dev/java/libraries/JDBC-Drivers/mysql-connector-java-5.1.44-bin.jar"/>
+  <path value="C:/dev/java/libraries/jsf-2.3/jstl-1.2.jar">
+   <libraries>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/c-1_0-rt.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/c-1_0.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/c.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/fmt-1_0-rt.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/fmt-1_0.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/fmt.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/fn.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/permittedtaglibs.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/scriptfree.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/sql-1_0-rt.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/sql-1_0.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/sql.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/x-1_0-rt.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/x-1_0.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/x.tld" project="contacts-web-jsf"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/tomcat-api.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/catalina-ant.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/jasper-el.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/annotations-api.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/catalina-storeconfig.jar"/>
+  <path value="C:/dev/java/libraries/jsf-2.3/weld-servlet-shaded.jar">
+   <libraries>
+    <library class="faces-config">
+     <id class="model-object"
+      path="FileSystems/lib-weld-servlet-shaded.jar/meta-inf/faces-config.xml" project="contacts-web-jsf"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/tomcat-i18n-ja.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/servlet-api.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/tomcat-i18n-es.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/tomcat-util-scan.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/ecj-4.6.3.jar"/>
+  <path value="C:/dev/java/libraries/jsf-2.3/javax.faces-2.3.2.jar">
+   <libraries>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-javax.faces-2.3.2.jar/meta-inf/html_basic.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-javax.faces-2.3.2.jar/meta-inf/jsf_core.tld" project="contacts-web-jsf"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-javax.faces-2.3.2.jar/meta-inf/mojarra_ext.taglib.xml" project="contacts-web-jsf"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-javax.faces-2.3.2.jar/meta-inf/mojarra_ext.tld" project="contacts-web-jsf"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/catalina.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/tomcat-i18n-fr.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/catalina-tribes.jar"/>
+  <path value="/contacts-web-jsf/WebContent/WEB-INF/faces-config.xml">
+   <libraries>
+    <library class="faces-config">
+     <id class="model-object"
+      path="FileSystems/WEB-INF/faces-config.xml" project="contacts-web-jsf"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/catalina-ha.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/jasper.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/tomcat-coyote.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/tomcat-websocket.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/jaspic-api.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/tomcat-jdbc.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/tomcat-util.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/tomcat-dbcp.jar"/>
+  <path value="C:/dev/serveurs/softs/tomcat-8.5/lib/tomcat-jni.jar"/>
+ </paths>
+ <validation>
+  <core validator-id="jboss.cdi.core">
+   <linked-resource declaration="true" name="%1;%2;" path="%0"/>
+   <linked-resource declaration="true" name="%4;" path="%3"/>
+   <linked-resource name="%6;" path="%5"/>
+   <linked-resource name="%3;%8;%9;%10;%11;%12;" path="%7"/>
+   <linked-resource name="%14;" path="%13"/>
+   <linked-resource name="%9;%10;" path="%15"/>
+   <linked-resource name="%14;" path="%16"/>
+   <linked-resource declaration="true" name="%17;" path="%9"/>
+   <linked-resource name="%6;" path="%18"/>
+   <linked-resource declaration="true" name="%19;" path="%18"/>
+   <linked-resource declaration="true" name="%20;" path="%10"/>
+   <linked-resource declaration="true" name="%22;" path="%21"/>
+   <linked-resource name="%3;%8;%9;%10;%11;%12;" path="%23"/>
+   <linked-resource declaration="true" name="%25;" path="%24"/>
+   <linked-resource declaration="true" name="%26;" path="%12"/>
+   <linked-resource declaration="true" name="%27;" path="%8"/>
+   <linked-resource name="%8;%11;" path="%28"/>
+   <linked-resource name="%14;%29;" path="%29"/>
+   <linked-resource name="%31;%32;%33;%34;%35;%36;%37;%38;%39;" path="%30"/>
+   <linked-resource name="%14;" path="%40"/>
+   <linked-resource name="%3;%14;%8;%9;%10;%6;%11;%12;" path="%14"/>
+   <linked-resource name="%6;" path="%41"/>
+   <linked-resource declaration="true" name="%42;" path="%41"/>
+   <linked-resource name="%29;" path="%43"/>
+   <linked-resource declaration="true" name="%44;" path="%11"/>
+   <linked-resource name="%3;%12;" path="%45"/>
+   <linked-resource declaration="true" name="%46;" path="%6"/>
+   <linked-resource name="%6;" path="%47"/>
+   <linked-resource name="%3;%8;%9;%10;%11;%12;" path="%48"/>
+  </core>
+  <el>
+   <linked-el length="33" name="%8" offset="1259" path="%49"/>
+   <linked-el length="39" name="%8" offset="1515" path="%49"/>
+   <linked-el length="39" name="%8" offset="397" path="%49"/>
+   <linked-el length="39" name="%8" offset="953" path="%49"/>
+   <linked-el length="35" name="%8" offset="809" path="%49"/>
+   <linked-el length="31" name="%8" offset="675" path="%49"/>
+   <linked-el length="34" name="%8" offset="1094" path="%49"/>
+   <linked-el length="31" name="%8" offset="338" path="%49"/>
+   <linked-el length="39" name="%10" offset="956" path="%50"/>
+   <linked-el length="43" name="%10" offset="398" path="%50"/>
+   <linked-el length="42" name="%10" offset="1102" path="%50"/>
+   <linked-el length="60" name="%10" offset="1960" path="%50"/>
+   <linked-el length="35" name="%10" offset="682" path="%50"/>
+   <linked-el length="41" name="%10" offset="2452" path="%50"/>
+   <linked-el length="42" name="%10" offset="2262" path="%50"/>
+   <linked-el length="35" name="%10" offset="336" path="%50"/>
+   <linked-el length="36" name="%10" offset="817" path="%50"/>
+   <linked-el length="43" name="%10" offset="1377" path="%50"/>
+   <linked-el length="73" name="%0" offset="787" path="%51"/>
+   <linked-el length="16" name="%0" offset="1322" path="%49"/>
+   <linked-el length="34" name="%0" offset="1359" path="%49"/>
+   <linked-el length="43" name="%20" offset="398" path="%50"/>
+   <linked-el length="26" name="%20" offset="1550" path="%50"/>
+   <linked-el length="42" name="%20" offset="1102" path="%50"/>
+   <linked-el length="60" name="%20" offset="1960" path="%50"/>
+   <linked-el length="35" name="%20" offset="682" path="%50"/>
+   <linked-el length="43" name="%20" offset="1377" path="%50"/>
+   <linked-el length="39" name="%20" offset="956" path="%50"/>
+   <linked-el length="22" name="%20" offset="1875" path="%50"/>
+   <linked-el length="41" name="%20" offset="2452" path="%50"/>
+   <linked-el length="42" name="%20" offset="2262" path="%50"/>
+   <linked-el length="23" name="%20" offset="1711" path="%50"/>
+   <linked-el length="35" name="%20" offset="336" path="%50"/>
+   <linked-el length="36" name="%20" offset="817" path="%50"/>
+   <linked-el length="53" name="%4" offset="896" path="%52"/>
+   <linked-el length="31" name="%4" offset="725" path="%52"/>
+   <linked-el length="36" name="%4" offset="442" path="%52"/>
+   <linked-el length="37" name="%4" offset="1203" path="%50"/>
+   <linked-el length="38" name="%4" offset="1166" path="%52"/>
+   <linked-el length="26" name="%4" offset="589" path="%52"/>
+   <linked-el length="39" name="%53" offset="956" path="%50"/>
+   <linked-el length="42" name="%53" offset="1102" path="%50"/>
+   <linked-el length="37" name="%53" offset="1201" path="%54"/>
+   <linked-el length="35" name="%53" offset="682" path="%50"/>
+   <linked-el length="45" name="%53" offset="716" path="%54"/>
+   <linked-el length="25" name="%53" offset="585" path="%54"/>
+   <linked-el length="35" name="%53" offset="336" path="%50"/>
+   <linked-el length="36" name="%53" offset="817" path="%50"/>
+   <linked-el length="43" name="%53" offset="1377" path="%50"/>
+   <linked-el length="19" name="%22" offset="1154" path="%50"/>
+   <linked-el length="18" name="%42" offset="319" path="%55"/>
+   <linked-el length="18" name="%42" offset="402" path="%55"/>
+   <linked-el length="73" name="%44" offset="787" path="%51"/>
+   <linked-el length="27" name="%44" offset="580" path="%51"/>
+   <linked-el length="35" name="%44" offset="1281" path="%51"/>
+   <linked-el length="18" name="%44" offset="738" path="%51"/>
+   <linked-el length="47" name="%44" offset="1017" path="%51"/>
+   <linked-el length="30" name="%44" offset="439" path="%51"/>
+   <linked-el length="37" name="%56" offset="711" path="%57"/>
+   <linked-el length="31" name="%56" offset="725" path="%52"/>
+   <linked-el length="37" name="%56" offset="338" path="%57"/>
+   <linked-el length="38" name="%56" offset="1166" path="%52"/>
+   <linked-el length="42" name="%56" offset="852" path="%57"/>
+   <linked-el length="26" name="%56" offset="589" path="%52"/>
+   <linked-el length="33" name="%27" offset="1259" path="%49"/>
+   <linked-el length="39" name="%27" offset="1515" path="%49"/>
+   <linked-el length="39" name="%27" offset="397" path="%49"/>
+   <linked-el length="39" name="%27" offset="953" path="%49"/>
+   <linked-el length="35" name="%27" offset="809" path="%49"/>
+   <linked-el length="31" name="%27" offset="675" path="%49"/>
+   <linked-el length="34" name="%27" offset="1094" path="%49"/>
+   <linked-el length="31" name="%27" offset="338" path="%49"/>
+   <linked-el length="39" name="%18" offset="1013" path="%58"/>
+   <linked-el length="50" name="%18" offset="899" path="%58"/>
+   <linked-el length="50" name="%18" offset="791" path="%58"/>
+   <linked-el length="47" name="%18" offset="680" path="%58"/>
+   <linked-el length="37" name="%26" offset="711" path="%57"/>
+   <linked-el length="37" name="%26" offset="338" path="%57"/>
+   <linked-el length="42" name="%26" offset="978" path="%57"/>
+   <linked-el length="42" name="%26" offset="852" path="%57"/>
+   <linked-el length="45" name="%26" offset="403" path="%57"/>
+   <linked-el length="51" name="%9" offset="901" path="%54"/>
+   <linked-el length="34" name="%9" offset="441" path="%54"/>
+   <linked-el length="47" name="%11" offset="1017" path="%51"/>
+   <linked-el length="30" name="%11" offset="439" path="%51"/>
+   <linked-el length="39" name="%19" offset="1013" path="%58"/>
+   <linked-el length="50" name="%19" offset="899" path="%58"/>
+   <linked-el length="50" name="%19" offset="791" path="%58"/>
+   <linked-el length="47" name="%19" offset="680" path="%58"/>
+   <linked-el length="18" name="%41" offset="319" path="%55"/>
+   <linked-el length="18" name="%41" offset="402" path="%55"/>
+   <linked-el length="53" name="%3" offset="896" path="%52"/>
+   <linked-el length="36" name="%3" offset="442" path="%52"/>
+   <linked-el length="37" name="%3" offset="1203" path="%50"/>
+   <linked-el length="50" name="%5" offset="899" path="%58"/>
+   <linked-el length="38" name="%5" offset="746" path="%59"/>
+   <linked-el length="39" name="%5" offset="953" path="%49"/>
+   <linked-el length="47" name="%5" offset="680" path="%58"/>
+   <linked-el length="31" name="%5" offset="338" path="%49"/>
+   <linked-el length="33" name="%5" offset="1259" path="%49"/>
+   <linked-el length="27" name="%5" offset="580" path="%51"/>
+   <linked-el length="39" name="%5" offset="1013" path="%58"/>
+   <linked-el length="35" name="%5" offset="1281" path="%51"/>
+   <linked-el length="18" name="%5" offset="738" path="%51"/>
+   <linked-el length="34" name="%5" offset="601" path="%59"/>
+   <linked-el length="35" name="%5" offset="809" path="%49"/>
+   <linked-el length="31" name="%5" offset="675" path="%49"/>
+   <linked-el length="50" name="%5" offset="791" path="%58"/>
+   <linked-el length="34" name="%5" offset="1094" path="%49"/>
+   <linked-el length="51" name="%17" offset="901" path="%54"/>
+   <linked-el length="37" name="%17" offset="1201" path="%54"/>
+   <linked-el length="45" name="%17" offset="716" path="%54"/>
+   <linked-el length="25" name="%17" offset="585" path="%54"/>
+   <linked-el length="34" name="%17" offset="441" path="%54"/>
+   <linked-el length="45" name="%60" offset="1210" path="%52"/>
+   <linked-el length="47" name="%60" offset="2051" path="%50"/>
+   <linked-el length="47" name="%60" offset="1047" path="%52"/>
+   <linked-el length="45" name="%60" offset="1244" path="%54"/>
+   <linked-el length="45" name="%60" offset="1322" path="%51"/>
+   <linked-el length="47" name="%60" offset="1050" path="%54"/>
+   <linked-el length="47" name="%60" offset="1162" path="%51"/>
+   <linked-el length="19" name="%21" offset="1154" path="%50"/>
+   <linked-el length="26" name="%61" offset="1550" path="%50"/>
+   <linked-el length="22" name="%61" offset="1875" path="%50"/>
+   <linked-el length="23" name="%61" offset="1711" path="%50"/>
+   <linked-el length="37" name="%12" offset="711" path="%57"/>
+   <linked-el length="37" name="%12" offset="338" path="%57"/>
+   <linked-el length="42" name="%12" offset="978" path="%57"/>
+   <linked-el length="42" name="%12" offset="852" path="%57"/>
+   <linked-el length="45" name="%12" offset="403" path="%57"/>
+   <linked-el length="30" name="%46" offset="856" path="%59"/>
+   <linked-el length="33" name="%46" offset="328" path="%59"/>
+   <linked-el length="34" name="%46" offset="601" path="%59"/>
+   <linked-el length="38" name="%46" offset="746" path="%59"/>
+   <linked-el length="158" name="%62" offset="1481" path="%63"/>
+   <linked-el length="158" name="%64" offset="1481" path="%63"/>
+   <linked-el length="73" name="%1" offset="787" path="%51"/>
+   <linked-el length="16" name="%1" offset="1322" path="%49"/>
+   <linked-el length="34" name="%1" offset="1359" path="%49"/>
+   <linked-el length="61" name="%65" offset="953" path="%63"/>
+   <linked-el length="158" name="%65" offset="1481" path="%63"/>
+   <linked-el length="60" name="%65" offset="1144" path="%63"/>
+   <linked-el length="61" name="%65" offset="732" path="%63"/>
+   <linked-el length="64" name="%65" offset="641" path="%63"/>
+   <linked-el length="119" name="%65" offset="1231" path="%63"/>
+   <linked-el length="51" name="%65" offset="848" path="%63"/>
+   <linked-el length="46" name="%65" offset="1381" path="%63"/>
+   <linked-el length="73" name="%66" offset="787" path="%51"/>
+   <linked-el length="30" name="%6" offset="856" path="%59"/>
+   <linked-el length="33" name="%6" offset="328" path="%59"/>
+   <linked-el length="34" name="%6" offset="601" path="%59"/>
+   <linked-el length="38" name="%6" offset="746" path="%59"/>
+   <linked-el length="73" name="%67" offset="787" path="%51"/>
+  </el>
+ </validation>
+ <aliases>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/mock/ModelPersonneListe.java" value="%31"/>
+  <alias
+   path="/contacts-commun/src/contacts/commun/service/IServiceCompte.java" value="%28"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/standard/ModelPersonneForm.java" value="%10"/>
+  <alias path="/contacts-web-jsf/src/contacts/jsf/cdi/Util.java" value="%0"/>
+  <alias path="/contacts-web-jsf/WebContent/WEB-INF/beans.xml" value="%30"/>
+  <alias
+   path="/contacts-emb/src/contacts/emb/util/securite/IManagerSecurite.java" value="%16"/>
+  <alias
+   path="/contacts-web-jsf/apt_generated/contacts/jsf/data/mapper/IMapperImpl.java" value="%48"/>
+  <alias
+   path="/contacts-web-jsf/WebContent/jsf/categorie/formulaire.xhtml" value="%57"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/util/ConverterToString.java" value="%24"/>
+  <alias path="converterGetId" value="%22"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/mock/ModelPersonneForm.java" value="%35"/>
+  <alias path="/contacts-web-jsf/src/contacts/jsf/data/Categorie.java" value="%56"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/cdi/CompteConnecté.java" value="%18"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/data/mapper/IMapper.java" value="%7"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/data/mapper/Mapper.java" value="%23"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/standard/ModelInfo.java" value="%41"/>
+  <alias path="modelPersonneListe" value="%17"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/mock/ModelCompteListe.java" value="%34"/>
+  <alias
+   path="/contacts-web-jsf/WebContent/jsf/template/page-standard.xhtml" value="%58"/>
+  <alias path="resource" value="%60"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/util/ConverterGetId.java" value="%21"/>
+  <alias path="/contacts-emb/src/contacts/emb/dao/IContextDao.java" value="%13"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/cdi/ProducerDaoJdbc.java" value="%29"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/mock/ModelCategorieListe.java" value="%39"/>
+  <alias path="facesContext.messageList" value="%62"/>
+  <alias path="util" value="%1"/>
+  <alias path="/contacts-web-jsf/WebContent/jsf/accueil/info.xhtml" value="%55"/>
+  <alias path="status.last" value="%66"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/standard/ModelConnexion.java" value="%6"/>
+  <alias path="status" value="%67"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/mock/ModelCompteForm.java" value="%32"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/mock/ModelConnexion.java" value="%33"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/standard/ModelCompteForm.java" value="%8"/>
+  <alias path="/contacts-web-jsf/WebContent/jsf/compte/formulaire.xhtml" value="%49"/>
+  <alias path="/contacts-web-jsf/WebContent/jsf/accueil/connexion.xhtml" value="%59"/>
+  <alias path="roles" value="%2"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/mock/ModelInfo.java" value="%38"/>
+  <alias
+   path="/contacts-web-jsf/WebContent/jsf/personne/formulaire.xhtml" value="%50"/>
+  <alias path="/contacts-web-jsf/WebContent/jsf/personne/liste.xhtml" value="%54"/>
+  <alias path="modelPersonneForm" value="%20"/>
+  <alias path="modelCategorieListe" value="%4"/>
+  <alias path="/contacts-web-jsf/src/contacts/jsf/data/Personne.java" value="%53"/>
+  <alias path="modelInfo" value="%42"/>
+  <alias path="modelCompteForm" value="%27"/>
+  <alias path="modelCompteListe" value="%44"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/standard/ModelPersonneListe.java" value="%9"/>
+  <alias path="modelCategorieForm" value="%26"/>
+  <alias
+   path="/contacts-commun/src/contacts/commun/service/IServiceCategorie.java" value="%45"/>
+  <alias path="/contacts-web-jsf/WebContent/jsf/categorie/liste.xhtml" value="%52"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/standard/ModelCompteListe.java" value="%11"/>
+  <alias path="compteConnecté" value="%19"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/standard/ModelCategorieListe.java" value="%3"/>
+  <alias path="/contacts-web-jsf/src/contacts/jsf/data/Compte.java" value="%5"/>
+  <alias
+   path="/contacts-emb/src/contacts/emb/util/jdbc/DataSourceSingleConnection.java" value="%43"/>
+  <alias path="converterToString" value="%25"/>
+  <alias path="/contacts-web-jsf/WebContent/jsf/compte/liste.xhtml" value="%51"/>
+  <alias path="/contacts-web-jsf/src/contacts/jsf/data/Telephone.java" value="%61"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/standard/ModelCategorieForm.java" value="%12"/>
+  <alias path="modelConnexion" value="%46"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/cdi/ProducerService.java" value="%14"/>
+  <alias
+   path="/contacts-commun/src/contacts/commun/service/IServiceConnexion.java" value="%47"/>
+  <alias path="facesContext" value="%64"/>
+  <alias
+   path="/contacts-commun/src/contacts/commun/service/IContextService.java" value="%40"/>
+  <alias path="/contacts-web-jsf/WebContent/erreur.xhtml" value="%63"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/mock/ModelCategorieForm.java" value="%36"/>
+  <alias path="requestScope" value="%65"/>
+  <alias
+   path="/contacts-web-jsf/src/contacts/jsf/model/mock/Donnees.java" value="%37"/>
+  <alias
+   path="/contacts-commun/src/contacts/commun/service/IServicePersonne.java" value="%15"/>
+ </aliases>
+ <includes/>
+ <uris>
+  <uri value="http://java.sun.com/jsf/core">
+   <prefix>f</prefix>
+  </uri>
+  <uri value="http://java.sun.com/jsf/html">
+   <prefix>h</prefix>
+  </uri>
+ </uris>
+</kb-project>

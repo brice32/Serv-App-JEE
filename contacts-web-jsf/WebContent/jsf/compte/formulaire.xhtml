@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition template="/jsf/template/page-standard.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:ui="http://java.sun.com/jsf/facelets">>
+
+	 <f:metadata>
+		 <f:viewParam name="id" value="#{modelCompteForm.compte.id}" />
+		 <f:viewAction action="#{modelCompteForm.retrouverCompte()}" />
+	 </f:metadata>
+
+    <ui:define name="titre">Compte</ui:define>
+
+    <ui:define name="contenu">
+
+	<h:form>
+		<table class="form">
+			<tr>
+				<td><label>Id :</label></td>
+				<td><h:inputText size="5"  readonly="true"  value="#{modelCompteForm.compte.id}" /></td>
+			</tr>
+			<tr>
+				<td><label>Pseudo :</label></td>
+				<td><h:inputText size="25" value="#{modelCompteForm.compte.pseudo}" /></td>
+			</tr>
+			<tr>
+				<td><label>Mot de Passe :</label></td>
+				<td><h:inputText size="25" value="#{modelCompteForm.compte.motDePasse}" /></td>
+			</tr>
+			<tr>
+				<td><label>Email :</label></td>
+				<td><h:inputText size="50" value="#{modelCompteForm.compte.email}" /></td>
+			</tr>
+			<tr>
+				<td><label>Rôles :</label></td>
+				<td>
+					<h:selectManyCheckbox layout="pageDirection" value="#{modelCompteForm.compte.roles}">
+						<f:selectItems value="#{util.roles}" var="role" itemLabel="#{util.getLibelléDeRole(role)}"  />
+					</h:selectManyCheckbox>
+				</td>
+			</tr>
+		</table>
+
+		<br /> 
+		<h:commandButton value="Valider" action="#{modelCompteForm.validerMiseAJour()}">
+		</h:commandButton>
+		<h:button value="Retour" outcome="comptes" />
+	</h:form>
+
+	</ui:define>
+
+</ui:composition>

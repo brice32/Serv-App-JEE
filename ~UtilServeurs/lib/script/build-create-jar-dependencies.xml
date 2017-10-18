@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create-jar-dependencies" >
+	
+    <property name="dir.lib" location=".."/>
+
+	<path id="path.libraries">
+	    <fileset dir="${dir.lib}">
+	        <include name="**/*.jar" />
+	    	<exclude name="dependencies.jar"/>
+	    </fileset>
+	</path>
+
+	
+	<target name="create-jar-dependencies" >
+
+		<manifestclasspath property="cp.dep.manifest" jarfile="${dir.lib}/dependencies.jar">
+	        <classpath refid="path.libraries" />
+	    </manifestclasspath>
+
+		<jar destfile="${dir.lib}/dependencies.jar">
+            <manifest>
+                <attribute name="Class-Path" value="${cp.dep.manifest}"/>
+            </manifest>
+        </jar>
+
+	</target>
+
+</project>

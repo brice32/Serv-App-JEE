@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition template="/jsf/template/page-standard.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:ui="http://java.sun.com/jsf/facelets">>
+
+	 <f:metadata>
+		 <f:viewParam name="id" value="#{modelCategorieForm.categorie.id}" />
+		 <f:viewAction action="#{modelCategorieForm.retrouverCategorie()}" />
+	 </f:metadata>
+
+     <ui:define name="titre">Catégorie</ui:define>
+
+    <ui:define name="contenu">
+	
+	<h:form action="liste.xhtml">
+		<table class="form">
+			<tr>
+				<td><label>Id :</label></td>
+				<td><h:inputText readonly="true" size="5" value="#{modelCategorieForm.categorie.id}" /></td>
+			</tr>
+			<tr>
+				<td><label>Libellé :</label></td>
+				<td><h:inputText size="25" value="#{modelCategorieForm.categorie.libelle}" /></td>
+			</tr>
+		</table>
+		<br /> 
+		<h:commandButton value="Valider" action="#{modelCategorieForm.validerMiseAJour()}">
+		</h:commandButton>
+		<h:button value="Retour" outcome="catégories" />
+	</h:form>
+
+	</ui:define>
+
+</ui:composition>

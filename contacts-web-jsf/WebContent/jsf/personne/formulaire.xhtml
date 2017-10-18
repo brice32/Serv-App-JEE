@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition template="/jsf/template/page-standard.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:ui="http://java.sun.com/jsf/facelets">>
+
+	<f:metadata>
+		<f:viewParam name="id" value="#{modelPersonneForm.personne.id}" />
+		<f:viewAction action="#{modelPersonneForm.retrouverPersonne()}" />
+	</f:metadata>
+
+    <ui:define name="titre">Personne</ui:define>
+
+    <ui:define name="contenu">
+	
+	<h:form>
+		<table class="form">
+			<tr>
+				<td><label>Id :</label></td>
+				<td><h:inputText size="5"  readonly="true"  value="#{modelPersonneForm.personne.id}" /></td>
+			</tr>
+			<tr>
+				<td><label>Nom :</label></td>
+				<td><h:inputText size="25" value="#{modelPersonneForm.personne.nom}" /></td>
+			</tr>
+			<tr>
+				<td><label>Prénom :</label></td>
+				<td><h:inputText size="25" value="#{modelPersonneForm.personne.prenom}" /></td>
+			</tr>
+			<tr>
+				<td><label>Catégorie :</label></td>
+				<td>
+					<h:selectOneMenu value="#{modelPersonneForm.personne.categorie}" converter="#{converterGetId}">
+						<f:selectItems value="#{modelCategorieListe.categories}"  />
+					</h:selectOneMenu>
+								</td>
+			</tr>
+		</table>
+		<br />
+		<h:dataTable id="tableTelephones" styleClass="liste" value="#{modelPersonneForm.personne.telephones}" var="telephone" style="width:350px">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Id" />
+				</f:facet>
+				#{telephone.id}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Libellé" />
+				</f:facet>
+				<h:inputText value="#{telephone.libelle}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Numéro" />
+				</f:facet>
+				<h:inputText value="#{telephone.numero}" />
+			</h:column>
+			<h:column>
+				<h:commandButton action="#{modelPersonneForm.supprimerTelephone(telephone)}" 
+					value="Supprimer" 
+					image="#{ resource['images:supprimer.png'] }" 
+					title="Supprimer">
+						<f:ajax render="@form" execute="@form" />
+				</h:commandButton>
+			</h:column>
+		</h:dataTable>
+		<br /> 
+		<h:commandButton action="#{modelPersonneForm.ajouterTelephone()}" value="Ajouter">
+			<f:ajax render="tableTelephones" execute="tableTelephones" />
+		</h:commandButton>
+		<h:commandButton value="Valider" action="#{modelPersonneForm.validerMiseAJour()}">
+		</h:commandButton>
+		<h:button value="Retour" outcome="personnes" />
+	</h:form>
+
+	</ui:define>
+
+</ui:composition>

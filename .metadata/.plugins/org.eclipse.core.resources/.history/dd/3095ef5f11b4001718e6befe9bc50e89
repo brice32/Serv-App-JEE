@@ -1,0 +1,103 @@
+package contacts.emb.dao.jpa;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import contacts.emb.dao.IDaoPersonne;
+import contacts.emb.data.Categorie;
+import contacts.emb.data.Personne;
+import contacts.emb.data.Telephone;
+
+
+public class DaoPersonne implements IDaoPersonne {
+	
+	// Champs
+	
+	private Donnees					donnees;
+	private Map<Integer, Personne>	mapPersonnes;
+
+	private EntityManager em;
+	
+	// Injecteurs
+	
+	public void setDonnees( Donnees donnees ) {
+		this.donnees = donnees;
+		mapPersonnes = donnees.getMapPersonnes();
+	}
+
+	public void setEntityManager( EntityManager  em ) {
+		this.em = em;
+	}
+	
+	// Actions
+	
+	@Override
+	public int inserer(Personne personne) {
+		em.persist(personne);
+		em.flush();
+		return personne.getId();
+	}
+
+	@Override
+	public void modifier(Personne personne) {
+		em.merge(personne);
+	}
+
+	@Override
+	public void supprimer(int idPersonne) {
+		Personne personne = retrouver(idPersonne);
+		em.remove(personne);
+	}
+
+	@Override
+	public Personne retrouver(int idPersonne) {
+		return em.find(Personne.class, idPersonne);
+	}
+
+	@Override
+	public List<Personne> listerTout() {
+		String jpql = "SELECT p FROM Personne p ORDER BY p.nom, p.prenom" ;
+//		 ORDER BY p.Nom, p.Prenom
+		TypedQuery<Personne> query = em.createQuery( jpql, Personne.class );
+		return query.getResultList();
+	}
+
+
+	@Override
+	public int compterourCategorie(int idCategorie) {
+		String jpql = "SELECT COUNT(p) FROM Personne p WHERE p.categorie.id =:idCategorie";
+		TypedQuery<Long> query = em.createQuery( jpql, Long.class);
+		return query.getSingleResult().intValue();
+	}
+	
+	
+	// Méthodes auxiliaires
+	
+	private void affecterIdTelephones( Personne personne ) {
+		for( Telephone t : personne.getTelephones() ) {
+			if ( t.getId() == 0 ) {
+				t.setId( donnees.getProchainIdTelephone() );
+			}
+		}
+	}
+    
+    private List<Personne> trierParNom( List<Personne> liste ) {
+		Collections.sort( liste,
+	            (Comparator<Personne>) ( item1, item2) -> {
+	            	int resultat = item1.getNom().toUpperCase().compareTo( item2.getNom().toUpperCase() );
+	            	if ( resultat  != 0 ) {
+	            		return resultat;
+	            	} else {
+		                return ( item1.getPrenom().toUpperCase().compareTo( item2.getPrenom().toUpperCase() ) );
+	            	}
+		});
+    	return liste;
+    }
+
+}

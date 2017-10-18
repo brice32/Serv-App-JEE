@@ -1,0 +1,183 @@
+package contacts.emb.service.standard;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import contacts.commun.dto.DtoCategorie;
+import contacts.commun.service.IServiceCategorie;
+import contacts.commun.util.ExceptionAnomalie;
+import contacts.commun.util.ExceptionValidation;
+import contacts.emb.dao.IDaoCategorie;
+import contacts.emb.dao.IDaoPersonne;
+import contacts.emb.dao.IManagerTransaction;
+import contacts.emb.data.Categorie;
+import contacts.emb.data.mapper.IMapper;
+import contacts.emb.util.securite.IManagerSecurite;
+
+
+public class ServiceCategorie implements IServiceCategorie {
+
+
+	// Logger
+	private static final Logger logger = Logger.getLogger( ServiceCategorie.class.getName() );
+
+	
+	// Champs 
+
+	private IManagerSecurite		managerSecurite;
+    private	IManagerTransaction		managerTransaction;
+	
+	private IMapper					mapper;
+	private IDaoCategorie			daoCategorie;
+	private IDaoPersonne			daoPersonne;
+	
+	
+	// Injecteurs
+	
+	public void setManagerSecurite( IManagerSecurite managerSecurite ) {
+		this.managerSecurite = managerSecurite;
+	}
+	
+	public void setManagerTransaction( IManagerTransaction managerTransaction ) {
+		this.managerTransaction = managerTransaction;
+	}
+	
+	public void setMapper( IMapper mapper ) {
+		this.mapper = mapper;
+	}
+	
+	public void setDaoCategorie( IDaoCategorie daoCategorie ) {
+		this.daoCategorie = daoCategorie;
+	}
+	
+	public void setDaoPersonne( IDaoPersonne daoPersonne ) {
+		this.daoPersonne = daoPersonne;
+	}
+	
+
+	// Actions 
+
+	@Override
+	public int inserer( DtoCategorie dtoCategorie ) throws ExceptionValidation {
+		try {
+			
+			managerSecurite.verifierAutorisationAdmin();
+			verifierValiditeDonnees( dtoCategorie );
+	
+			managerTransaction.begin();
+			try {
+				int id = daoCategorie.inserer( mapper.map( dtoCategorie ) );
+				managerTransaction.commit();
+				return id;
+			} catch (Exception e) {
+				managerTransaction.rollback();
+				throw e;
+			}
+	
+		} catch (RuntimeException e) {
+			logger.log( Level.SEVERE, e.getMessage(), e );
+			throw new ExceptionAnomalie(e);
+		}
+	}
+
+	@Override
+	public void modifier( DtoCategorie dtoCategorie ) throws ExceptionValidation {
+		try  {
+		
+			managerSecurite.verifierAutorisationAdmin();
+			verifierValiditeDonnees( dtoCategorie );
+	
+			managerTransaction.begin();
+			try {
+				daoCategorie.modifier( mapper.map( dtoCategorie ) );
+				managerTransaction.commit();
+			} catch (Exception e) {
+				managerTransaction.rollback();
+				throw e;
+			}
+	
+		} catch (RuntimeException e) {
+			logger.log( Level.SEVERE, e.getMessage(), e );
+			throw new ExceptionAnomalie(e);
+		}
+	}
+
+	@Override
+	public void supprimer( int idCategorie ) throws ExceptionValidation {
+		try {
+		
+			managerSecurite.verifierAutorisationAdmin();
+
+            if ( daoPersonne.compterourCategorie(idCategorie) != 0 ) {
+                throw new ExceptionValidation( "La catégorie n'est pas vide" );
+            }
+
+			managerTransaction.begin();
+			try {
+				daoCategorie.supprimer(idCategorie);
+				managerTransaction.commit();
+			} catch (Exception e) {
+				managerTransaction.rollback();
+				throw e;
+			}
+
+		} catch (RuntimeException e) {
+			logger.log( Level.SEVERE, e.getMessage(), e );
+			throw new ExceptionAnomalie(e);
+		}
+	}
+
+	@Override
+	public DtoCategorie retrouver( int idCategorie ) {
+		try {
+			
+			managerSecurite.verifierAutorisationUtilisateurOuAdmin();
+			return mapper.map( daoCategorie.retrouver(idCategorie) );
+
+		} catch (RuntimeException e) {
+			logger.log( Level.SEVERE, e.getMessage(), e );
+			throw new ExceptionAnomalie(e);
+		}
+	}
+
+	@Override
+	public List<DtoCategorie> listerTout() {
+		try {
+
+			managerSecurite.verifierAutorisationUtilisateurOuAdmin();
+			List<DtoCategorie> liste = new ArrayList<>();
+			for( Categorie categorie : daoCategorie.listerTout() ) {
+				liste.add( mapper.map( categorie ) );
+			}
+			return liste;
+
+		} catch (RuntimeException e) {
+			logger.log( Level.SEVERE, e.getMessage(), e );
+			throw new ExceptionAnomalie(e);
+		}
+	}
+
+	
+	
+	// Méthodes auxiliaires
+	
+	private void verifierValiditeDonnees( DtoCategorie dtoCategorie ) throws ExceptionValidation {
+		
+		StringBuilder message = new StringBuilder();
+		
+		if ( dtoCategorie.getLibelle() == null || dtoCategorie.getLibelle().isEmpty() ) {
+			message.append( "\nLe libellé est absent." );
+		} else 	if ( dtoCategorie.getLibelle().length() < 3 ) {
+			message.append( "\nLe libellé est trop court." );
+		} else 	if ( dtoCategorie.getLibelle().length() > 25 ) {
+			message.append( "\nLe libellé est trop long." );
+		}
+		
+		if ( message.length() > 0 ) {
+			throw new ExceptionValidation( message.toString().substring(1) );
+		}
+	}
+
+}

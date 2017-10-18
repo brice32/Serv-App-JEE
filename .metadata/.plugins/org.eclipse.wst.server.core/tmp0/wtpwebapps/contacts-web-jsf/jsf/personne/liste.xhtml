@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition template="/jsf/template/page-standard.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:ui="http://java.sun.com/jsf/facelets">>
+
+     <ui:define name="titre">Liste des personnes</ui:define>
+
+    <ui:define name="contenu">
+
+	<h:form>
+
+		<h:dataTable styleClass="liste" value="#{modelPersonneListe.personnes}" var="personne" >
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Id" />
+				</f:facet>
+				#{personne.id}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Nom" />
+				</f:facet>
+				#{personne.nom} #{personne.prenom}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Actions" />
+				</f:facet>
+				<h:commandButton action="#{modelPersonneListe.supprimer(personne)}" 
+					value="Supprimer" 
+					onclick="return confirm('Confirmez-vous la suppression ?')" 
+					image="#{ resource['images:supprimer.png'] }" 
+					title="Supprimer">
+					<f:ajax render="@form" />
+				</h:commandButton>
+				<h:button
+					outcome="formulaire?id=#{personne.id}"
+					image="#{ resource['images:modifier.png'] }"
+					title="Modifier"
+				>
+				</h:button>
+			</h:column>
+		</h:dataTable>
+		<br />
+		<h:button value="Actualiser"/>
+		<h:button value="Ajouter" outcome="formulaire" />
+
+	</h:form>
+
+	</ui:define>
+
+</ui:composition>

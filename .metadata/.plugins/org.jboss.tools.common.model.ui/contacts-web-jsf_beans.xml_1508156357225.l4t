@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout resource="/contacts-web-jsf/WebContent/WEB-INF/beans.xml">
+ <TreeFormPage>
+  <Memento type="FileCDIBeans11">
+   <Memento collapsed="false" type="Cdi Beans"/>
+  </Memento>
+  <Memento type="CDIScan">
+   <Memento collapsed="false" type="Exclude"/>
+  </Memento>
+  <Memento type="CDIExclude">
+   <Memento type="Exclude"/>
+  </Memento>
+ </TreeFormPage>
+</Layout>

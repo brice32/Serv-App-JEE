@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="36,67,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="connexion::#jsf#accueil#connexion.xhtml"
+    NAME="output" PATH="/jsf/accueil/connexion.xhtml"
+    TARGET="rules:#jsf#accueil#connexion.xhtml" TITLE="connexion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="catégories::#jsf#categorie#liste.xhtml"
+    NAME="output1" PATH="/jsf/categorie/liste.xhtml"
+    TARGET="rules:#jsf#categorie#liste.xhtml" TITLE="catégories" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="comptes::#jsf#compte#liste.xhtml"
+    NAME="output2" PATH="/jsf/compte/liste.xhtml"
+    TARGET="rules:#jsf#compte#liste.xhtml" TITLE="comptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="personnes::#jsf#personne#liste.xhtml"
+    NAME="output3" PATH="/jsf/personne/liste.xhtml"
+    TARGET="rules:#jsf#personne#liste.xhtml" TITLE="personnes" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#jsf#accueil#connexion.xhtml"
+  PATH="/jsf/accueil/connexion.xhtml" SHAPE="287,65,0,0"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#jsf#categorie#liste.xhtml"
+  PATH="/jsf/categorie/liste.xhtml" SHAPE="280,120,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#jsf#compte#liste.xhtml"
+  PATH="/jsf/compte/liste.xhtml" SHAPE="280,176,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#jsf#personne#liste.xhtml"
+  PATH="/jsf/personne/liste.xhtml" SHAPE="284,233,0,0"
+  model-entity="JSFProcessGroup" persistent="true"/>
+</PROCESS>

@@ -1,0 +1,76 @@
+package contacts.emb.dao.jpa;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import contacts.emb.dao.IDaoCategorie;
+import contacts.emb.data.Categorie;
+
+
+public class DaoCategorie implements IDaoCategorie {
+
+	
+	// Champs
+
+    private EntityManager em;
+	
+	// Injecteurs
+	
+	public void setDonnees( Donnees donnees ) {
+		mapCategories = donnees.getMapCategories();
+	}
+	
+	public void setEntityManager( EntityManager em ) {
+		this.em = em;
+	}
+	
+	// Actions
+	
+	@Override
+	public int inserer(Categorie categorie) {
+//		if ( mapCategories.isEmpty() ) {
+//			categorie.setId( 1 );
+//		} else {
+//			categorie.setId( Collections.max( mapCategories.keySet() ) + 1 );
+//		}
+//		mapCategories.put( categorie.getId(), categorie );
+//		return categorie.getId();
+		em.persist(categorie);
+		em.flush();
+		return categorie.getId();
+	}
+
+	@Override
+	public void modifier(Categorie categorie) {
+//		mapCategories.replace( categorie.getId(), categorie );
+		em.merge(categorie);
+	}
+
+	@Override
+	public void supprimer(int idCategorie) {
+//		mapCategories.remove( idCategorie );
+		Categorie categorie = em.find(Categorie.class, idCategorie);
+		em.remove(categorie);
+	}
+
+	@Override
+	public Categorie retrouver(int idCategorie) {
+//		return mapCategories.get( idCategorie );
+		return em.find(Categorie.class, idCategorie);
+	}
+
+	@Override
+	public List<Categorie> listerTout() {
+//		return trierParLibelle( new ArrayList<>(mapCategories.values() ) );
+		String jpql = "SELECT c FROM Categorie c" ;
+		TypedQuery<Categorie> query = em.createQuery( jpql, Categorie.class );
+		return query.getResultList();
+	}
+	
+}

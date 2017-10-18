@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane focusTraversable="true" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.systeme.ControllerPrincipal">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Système">
+            <items>
+                  <MenuItem fx:id="menuItemSeDeconnecter" disable="true" mnemonicParsing="false" onAction="#doSeDeconnecter" text="Se déconnecter" />
+              <MenuItem id="menuItemQuitter" mnemonicParsing="false" onAction="#doQuitter" text="Quitter" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuDonnees" mnemonicParsing="false" text="Données" visible="false">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#doAfficherListePersonnes" text="Personnes" />
+                  <MenuItem fx:id="menuItemCategories" mnemonicParsing="false" onAction="#doAfficherListeCategories" text="Catégories" />
+                  <MenuItem fx:id="menuItemComptes" mnemonicParsing="false" onAction="#doAfficherListeComptes" text="Comptes" />
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Aide">
+            <items>
+              <MenuItem mnemonicParsing="false" text="A Propos" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

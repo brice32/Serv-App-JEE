@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Oct 16 14:20:42 CEST 2017
+org.eclipse.jst.j2ee.server\:contacts-commun=WEB-INF/lib/contacts-commun.jar
+org.eclipse.jst.j2ee.server\:contacts-emb=WEB-INF/lib/contacts-emb.jar

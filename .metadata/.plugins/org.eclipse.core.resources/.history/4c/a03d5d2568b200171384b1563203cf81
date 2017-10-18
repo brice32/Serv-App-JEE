@@ -1,0 +1,33 @@
+
+
+name.group.data   = tp-java-ee-titus
+
+
+# Chemins des répertoires de regroupement
+path.group.data   = C:/TEMP/${name.group.data}
+#path.group.data   = ${path.root.appli}/../${name.group.data}
+path.group.backup = ${path.root.appli}/_backup
+
+
+# Chemins de répertoires d'usage courant
+path.root.dev        = C:/dev
+path.subroot.java    = ${path.root.dev}/java
+path.subroot.servers = ${path.root.dev}/serveurs
+path.dir.jdk.x86     = ${path.subroot.java}/jdk/jdk8-x86
+path.dir.jdk.x64     = ${path.subroot.java}/jdk/jdk8-x64
+path.dir.jdbc        = ${path.subroot.java}/libraries/jdbc-Drivers
+
+path.group.java.utils    = ${path.subroot.java}/utils
+path.group.servers.softs = ${path.subroot.servers}/softs
+path.group.servers.utils = ${path.subroot.servers}/utils
+
+
+# Ant
+path.exe.ant = ${path.group.java.utils}/ant/bin/ant
+
+# Durées d'attente (en millisecondes)
+duration.refresh.status = 1500
+duration.wait.starting = 10000
+duration.wait.stopping = 10000
+
+
